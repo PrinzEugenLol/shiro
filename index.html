@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кликер</title>
-    <link rel="stylesheet" href="style.css"> <!-- если стили есть -->
-    <script src="script.js" defer></script>
+    <script>
+        let tapCount = 0;
+
+        // Инициализация Telegram Web App
+        window.onload = function() {
+            window.Telegram.WebApp.init();  // Инициализация мини-программы
+            window.Telegram.WebApp.MainButton.setParams({
+                text: `Тапов: ${tapCount}`
+            });
+            window.Telegram.WebApp.MainButton.show();
+        };
+
+        function increaseTapCount() {
+            tapCount++;
+            document.getElementById('count').textContent = tapCount;
+            window.Telegram.WebApp.MainButton.text = `Тапов: ${tapCount}`;  // Обновляем текст на кнопке
+        }
+    </script>
 </head>
 <body>
     <div style="text-align: center; padding: 50px;">
