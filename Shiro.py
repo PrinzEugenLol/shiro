@@ -20,8 +20,8 @@ class Shiro(loader.Module):
         await message.reply(
             "<b>🌘 Широ</b>\n\n"
             "<b><emoji document_id=6325682031741109665>💃</emoji> Создатель:</b> <b>𝙋𝙧𝙞𝙣𝙯 𝙀𝙪𝙜𝙚𝙣</b>\n\n"
-            "<b>💫 Версия:</b> <i>1.0.8</i>\n"
-            "<b>🌳 Ветка:</b> <code>v1.0.8</code>\n"
+            "<b>💫 Версия:</b> <i>1.0.9</i>\n"
+            "<b>🌳 Ветка:</b> <code>v1.0.9</code>\n"
             "😌 <b>Актуальная версия</b>\n\n"
             f"{farm_muku_status}\n"
             f"{farm_muko_status}\n"
@@ -129,7 +129,7 @@ class Shiro(loader.Module):
     async def цыпcmd(self, message):
         """обмен цып"""
 
-        await utils.answer(message, "кинуть цыпу") 
+        sent_message = await message.reply("кинуть цыпу") 
         await asyncio.sleep(2)
         updates = await self._client.get_messages(message.peer_id, ids=[sent_message[0].id])
         await msg.click(0)       
