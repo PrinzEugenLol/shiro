@@ -134,7 +134,13 @@ class Shiro(loader.Module):
         updates = await self._client.get_messages(message.peer_id, limit=2)
         for msg in updates:
             if msg.buttons:
-                await msg.click(0)
+                if msg.buttons:
+                    try:
+                        await msg.click(0)
+                        return  # Завершаем функцию после нажатия кнопки
+                    except Exception as e:
+                        await message.reply(f"Ошибка при нажатии кнопки: {e}")
+                        return
                                 
 
     async def мугcmd(self, message):
