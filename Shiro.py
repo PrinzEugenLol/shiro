@@ -142,7 +142,7 @@ class Shiro(loader.Module):
                         await message.reply(f"Ошибка при нажатии кнопки: {e}")
                         return
 
-    async def цыпыcmd(self, message):
+    async def куряcmd(self, message):
         """разовый сбор курей"""
 
         await utils.answer(message, "муку")
