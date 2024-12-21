@@ -141,7 +141,23 @@ class Shiro(loader.Module):
                     except Exception as e:
                         await message.reply(f"Ошибка при нажатии кнопки: {e}")
                         return
-                                
+
+    async def цыпыcmd(self, message):
+        """разовый сбор курей"""
+
+        await utils.answer(message, "кинуть цыпу")
+        await asyncio.sleep(2)
+        updates = await self._client.get_messages(message.peer_id, limit=2)
+        for msg in updates:
+             if msg.buttons:
+                 if msg.buttons:
+                     try:
+                         await msg.click(0)
+                         return  # Завершаем функцию после нажатия кнопки
+                     except Exception as e:
+                         await message.reply(f"Ошибка при нажатии кнопки: {e}")
+                         return
+        
 
     async def мугcmd(self, message):
         """авто грядки"""
