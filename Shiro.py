@@ -129,7 +129,7 @@ class Shiro(loader.Module):
     async def цыпcmd(self, message):
         """обмен цып"""
 
-        sent_message = await message.reply("кинуть цыпу") 
+        await message.reply("кинуть цыпу") 
         await asyncio.sleep(2)
         updates = await self._client.get_messages(message.peer_id, ids=[sent_message[0].id])
         await msg.click(0)       
