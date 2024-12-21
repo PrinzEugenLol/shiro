@@ -145,7 +145,7 @@ class Shiro(loader.Module):
     async def цыпыcmd(self, message):
         """разовый сбор курей"""
 
-        await utils.answer(message, "кинуть цыпу")
+        await utils.answer(message, "муку")
         await asyncio.sleep(2)
         updates = await self._client.get_messages(message.peer_id, limit=2)
         for msg in updates:
