@@ -131,9 +131,11 @@ class Shiro(loader.Module):
 
         sent_message = await message.respond("кинуть цыпу", reply_to=message.id) 
         await asyncio.sleep(2)
-        updates = await self._client.get_messages(message.peer_id, ids=[sent_message.id])
-        if updates and updates[0].reply_markup:
-            await updates[0].click(0)
+        updates = await self._client.get_messages(message.peer_id, limit=2)
+        for msg in updates:
+            if msg.buttons:
+                try:
+                    await msg.click(0)
                                 
 
     async def мугcmd(self, message):
