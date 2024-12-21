@@ -134,8 +134,7 @@ class Shiro(loader.Module):
         updates = await self._client.get_messages(message.peer_id, limit=2)
         for msg in updates:
             if msg.buttons:
-                try:
-                    await msg.click(0)
+                await msg.click(0)
                                 
 
     async def мугcmd(self, message):
