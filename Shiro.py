@@ -124,7 +124,15 @@ class Shiro(loader.Module):
                                 elif '👋🏻' in button.text:
                                     await msg.click(0)
                                     break
-                await asyncio.sleep(5)                   
+                await asyncio.sleep(5)         
+
+    async def цыпcmd(self, message):
+        """обмен цып"""
+
+        await utils.answer(message, "кинуть цыпу") 
+        await asyncio.sleep(2)
+        updates = await self._client.get_messages(message.peer_id, ids=[sent_message[0].id])
+        await msg.click(0)       
                                 
 
     async def мугcmd(self, message):
