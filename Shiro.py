@@ -102,10 +102,10 @@ class Shiro(loader.Module):
             await utils.answer(message, f"<emoji document_id=5314766675814394234>✔️</emoji>Крафтим.")
             
             while self.get("farm_muv"):
-                await message.client.send_message(-1002061336473, "мув")
+                await message.client.send_message(-1002095817137, "мув")
                 await asyncio.sleep(5)
 
-                chat_messages = await message.client.get_messages(-1002061336473, limit=5)
+                chat_messages = await message.client.get_messages(-1002095817137, limit=5)
                 for msg in chat_messages:
                     if msg.reply_markup and '🧤' in msg.text:
                         buttons = msg.reply_markup.rows
