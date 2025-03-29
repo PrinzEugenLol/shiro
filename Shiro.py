@@ -86,7 +86,7 @@ class Shiro(loader.Module):
                             await msg.click(3)
                             break
                             
-                await asyncio.sleep(random.randint(6120, 6420))
+                await asyncio.sleep(random.randint(3305, 3720))
 
 
     async def мувcmd(self, message):
